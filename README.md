@@ -18,6 +18,7 @@ Agent-facing documentation lives in:
 - `docs/ERROR_COOKBOOK.md`
 - `docs/PALETTE_LIVE_WORKFLOW.md`
 - `docs/DESIGN_INTENT_RULES.md`
+- `docs/SOURCE_RELIABILITY.md`
 
 ## First run
 

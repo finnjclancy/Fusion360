@@ -48,6 +48,7 @@ FusionLiveModel/
     ERROR_COOKBOOK.md
     PALETTE_LIVE_WORKFLOW.md
     DESIGN_INTENT_RULES.md
+    SOURCE_RELIABILITY.md
 ```
 
 Important files:
@@ -60,6 +61,7 @@ Important files:
 - `docs/FUSION_SPEC_SCHEMA.md` defines how future JSON fields should be named and structured.
 - `docs/REQUEST_PLAYBOOK.md` maps Finn's natural-language requests to code/spec changes.
 - The other files in `docs/` cover sketch constraints, feature choices, geometry targeting, parameters, exports, errors, palettes, and design intent.
+- `docs/SOURCE_RELIABILITY.md` separates official Autodesk API facts from project conventions and CAD guidance.
 
 ## Scripts vs Add-Ins
 

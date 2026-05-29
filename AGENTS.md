@@ -17,6 +17,7 @@ Read these files before changing behavior:
 - `docs/ERROR_COOKBOOK.md` - common Fusion API failures and fixes.
 - `docs/PALETTE_LIVE_WORKFLOW.md` - future in-Fusion HTML palette architecture.
 - `docs/DESIGN_INTENT_RULES.md` - modeling rules for robust rebuilds.
+- `docs/SOURCE_RELIABILITY.md` - what is official Autodesk API fact versus project convention or modeling guidance.
 - `design_spec.json` - Current model parameters and style values.
 - `model_builder.py` - The model-building implementation.
 - `commands/commandDialog/entry.py` - The Fusion toolbar command that reloads `model_builder.py`.
