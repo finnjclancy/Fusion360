@@ -1,0 +1,17 @@
+{
+  "component_name": "Fusion Live Model",
+  "body_name": "Rounded block",
+  "length_mm": 80,
+  "width_mm": 40,
+  "height_mm": 12,
+  "fillet_radius_mm": 4,
+  "style": {
+    "appearance_name": "Fusion Live Blue",
+    "color": {
+      "red": 42,
+      "green": 126,
+      "blue": 210,
+      "alpha": 255
+    }
+  }
+}

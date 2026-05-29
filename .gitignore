@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Editor and local environment noise
+.idea/
+*.swp
+*.swo
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Large exported CAD artifacts should be committed intentionally.
+*.f3d
+*.f3z
+*.step
+*.stp
+*.iges
+*.igs
+*.stl
+*.obj
