@@ -6,6 +6,8 @@ Read these files before changing behavior:
 
 - `docs/FUSION_AGENT_GUIDE.md` - Fusion API mental model, project architecture, safe workflow, and source links.
 - `docs/FUSION_API_RECIPES.md` - Copyable coding patterns for common modeling requests.
+- `docs/FUSION_SPEC_SCHEMA.md` - JSON spec contract and recommended future schema.
+- `docs/REQUEST_PLAYBOOK.md` - Natural-language request translation rules and examples.
 - `design_spec.json` - Current model parameters and style values.
 - `model_builder.py` - The model-building implementation.
 - `commands/commandDialog/entry.py` - The Fusion toolbar command that reloads `model_builder.py`.
@@ -39,6 +41,8 @@ The command reloads `model_builder.py` every time it runs, so changes to that fi
 - Be careful with components: some Fusion documents only allow one component. The current code falls back to building in the root component.
 - Never assume a child component can be created. Catch `RuntimeError` or build in `design.rootComponent` when necessary.
 - Do not hide tracebacks from the user. Fusion errors should be shown in a message box or logged with `app.log`.
+- Use `docs/REQUEST_PLAYBOOK.md` to map Finn's wording to CAD operations.
+- Use `docs/FUSION_SPEC_SCHEMA.md` before adding new JSON fields.
 
 ## What Is Active
 
@@ -60,4 +64,3 @@ The active behavior is:
 - Run `python3 -m json.tool` on touched JSON files.
 - Explain which file changed and what Finn should click in Fusion.
 - If a change affects command UI rather than model logic, tell Finn to toggle the add-in off/on or restart Fusion.
-

@@ -37,6 +37,8 @@ FusionLiveModel/
   docs/
     FUSION_AGENT_GUIDE.md
     FUSION_API_RECIPES.md
+    FUSION_SPEC_SCHEMA.md
+    REQUEST_PLAYBOOK.md
 ```
 
 Important files:
@@ -46,6 +48,8 @@ Important files:
 - `commands/commandDialog/entry.py` creates the `Rebuild Live Model` toolbar button.
 - `model_builder.py` contains the modeling logic.
 - `design_spec.json` is the editable model specification.
+- `docs/FUSION_SPEC_SCHEMA.md` defines how future JSON fields should be named and structured.
+- `docs/REQUEST_PLAYBOOK.md` maps Finn's natural-language requests to code/spec changes.
 
 ## Scripts vs Add-Ins
 
@@ -308,4 +312,3 @@ Appearance property names can vary by base appearance. Log available properties 
 - Autodesk, Appearances: https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/Appearances_addByCopy.htm
 - Autodesk, physical materials and appearances: https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-55EC2C42-60E1-48C7-B802-D2AA7AB6F0CB
 - Autodesk, User parameters: https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/UserParameters_add.htm
-

@@ -7,6 +7,8 @@ Agent-facing documentation lives in:
 - `AGENTS.md`
 - `docs/FUSION_AGENT_GUIDE.md`
 - `docs/FUSION_API_RECIPES.md`
+- `docs/FUSION_SPEC_SCHEMA.md`
+- `docs/REQUEST_PLAYBOOK.md`
 
 ## First run
 
