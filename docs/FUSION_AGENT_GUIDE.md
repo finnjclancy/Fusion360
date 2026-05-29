@@ -39,6 +39,15 @@ FusionLiveModel/
     FUSION_API_RECIPES.md
     FUSION_SPEC_SCHEMA.md
     REQUEST_PLAYBOOK.md
+    SKETCH_CONSTRAINTS_AND_DIMENSIONS.md
+    FEATURE_RECIPES_DEEP.md
+    GEOMETRY_TARGETING.md
+    PARAMETRIC_MODELING.md
+    API_OBJECT_GLOSSARY.md
+    EXPORT_AND_MANUFACTURING.md
+    ERROR_COOKBOOK.md
+    PALETTE_LIVE_WORKFLOW.md
+    DESIGN_INTENT_RULES.md
 ```
 
 Important files:
@@ -50,6 +59,7 @@ Important files:
 - `design_spec.json` is the editable model specification.
 - `docs/FUSION_SPEC_SCHEMA.md` defines how future JSON fields should be named and structured.
 - `docs/REQUEST_PLAYBOOK.md` maps Finn's natural-language requests to code/spec changes.
+- The other files in `docs/` cover sketch constraints, feature choices, geometry targeting, parameters, exports, errors, palettes, and design intent.
 
 ## Scripts vs Add-Ins
 

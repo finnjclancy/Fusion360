@@ -9,6 +9,15 @@ Agent-facing documentation lives in:
 - `docs/FUSION_API_RECIPES.md`
 - `docs/FUSION_SPEC_SCHEMA.md`
 - `docs/REQUEST_PLAYBOOK.md`
+- `docs/SKETCH_CONSTRAINTS_AND_DIMENSIONS.md`
+- `docs/FEATURE_RECIPES_DEEP.md`
+- `docs/GEOMETRY_TARGETING.md`
+- `docs/PARAMETRIC_MODELING.md`
+- `docs/API_OBJECT_GLOSSARY.md`
+- `docs/EXPORT_AND_MANUFACTURING.md`
+- `docs/ERROR_COOKBOOK.md`
+- `docs/PALETTE_LIVE_WORKFLOW.md`
+- `docs/DESIGN_INTENT_RULES.md`
 
 ## First run
 

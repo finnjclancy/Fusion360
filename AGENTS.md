@@ -8,6 +8,15 @@ Read these files before changing behavior:
 - `docs/FUSION_API_RECIPES.md` - Copyable coding patterns for common modeling requests.
 - `docs/FUSION_SPEC_SCHEMA.md` - JSON spec contract and recommended future schema.
 - `docs/REQUEST_PLAYBOOK.md` - Natural-language request translation rules and examples.
+- `docs/SKETCH_CONSTRAINTS_AND_DIMENSIONS.md` - sketch design intent, dimensions, and constraints.
+- `docs/FEATURE_RECIPES_DEEP.md` - deeper guidance for extrude, revolve, sweep, loft, holes, shell, fillet, chamfer, patterns, and combine.
+- `docs/GEOMETRY_TARGETING.md` - how to find top faces, vertical edges, rims, largest faces, and when to use selection inputs.
+- `docs/PARAMETRIC_MODELING.md` - when and how to use Fusion user parameters.
+- `docs/API_OBJECT_GLOSSARY.md` - quick definitions of common Fusion API objects.
+- `docs/EXPORT_AND_MANUFACTURING.md` - export formats and manufacturing notes.
+- `docs/ERROR_COOKBOOK.md` - common Fusion API failures and fixes.
+- `docs/PALETTE_LIVE_WORKFLOW.md` - future in-Fusion HTML palette architecture.
+- `docs/DESIGN_INTENT_RULES.md` - modeling rules for robust rebuilds.
 - `design_spec.json` - Current model parameters and style values.
 - `model_builder.py` - The model-building implementation.
 - `commands/commandDialog/entry.py` - The Fusion toolbar command that reloads `model_builder.py`.
