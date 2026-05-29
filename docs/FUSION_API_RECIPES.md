@@ -178,6 +178,8 @@ def _appearance_from_spec(design, spec):
     if not appearance:
         app = adsk.core.Application.get()
         library = app.materialLibraries.itemByName('Fusion 360 Appearance Library')
+        if not library:
+            raise RuntimeError('Fusion 360 Appearance Library was not found. Search available material libraries before calling appearances.itemByName.')
         source = library.appearances.itemByName('Paint - Enamel Glossy (White)')
         appearance = design.appearances.addByCopy(source, appearance_name)
 
@@ -195,6 +197,8 @@ body.appearance = _appearance_from_spec(design, spec)
 ```
 
 For metal, plastic, glass, rubber, wood, or textured materials, copy a more suitable base appearance from a Fusion appearance library and then customize it.
+
+Important: do not assume the exact library name `Fusion 360 Appearance Library` is available in every install/session. Production code should scan `app.materialLibraries` for a usable source appearance and skip styling gracefully if none exists.
 
 ## Add User Parameters
 
@@ -397,4 +401,3 @@ Then tell Finn:
 - Fillets: https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/FilletFeatures_add.htm
 - Appearances: https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/Appearances_addByCopy.htm
 - User parameters: https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/UserParameters_add.htm
-

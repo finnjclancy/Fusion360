@@ -61,6 +61,20 @@ Recommended order:
 
 If shell fails after details, try shelling before details.
 
+## Frame and Eyewear Modeling
+
+For eyewear-like parts, the frame should usually be modeled as a continuous body:
+
+1. Create one outer blank that represents the full front frame envelope.
+2. Cut the lens opening.
+3. Cut nose clearance.
+4. Add arms/temples and join them into the frame.
+5. Keep lenses or mesh inserts as separate bodies.
+
+Avoid building the main frame from many independent rail bodies and hoping a later combine creates a clean part. That approach produced scattered bars in the first glasses attempt and did not match the intended product form.
+
+For the current AirPods Max inspired visor glasses, `docs/AIRPODS_MAX_VISOR_CAD_SPEC.md` is the design source of truth. Do not make further generator changes for that model without checking the dimensions and verification checklist in that spec.
+
 ## Manufacturing Awareness
 
 For 3D printing:
@@ -119,4 +133,3 @@ Before finishing:
 - Generated names are stable.
 - Rebuild cleanup is scoped.
 - Final instructions tell Finn what to click in Fusion.
-

@@ -39,6 +39,56 @@ Fix:
 - Use `sketch.profiles.count` before indexing.
 - Simplify the sketch.
 
+## VCS_SKETCH_OVER_CONSTRAINTS from addCenterToCenterSlot
+
+Cause:
+
+Fusion's `Sketch.addCenterToCenterSlot(...)` can automatically add slot constraints/dimensions. In generated sketches, especially repeated angled or vertical rails, this can throw:
+
+```text
+RuntimeError: 3 : VCS_SKETCH_OVER_CONSTRAINTS - Sketch geometry is over constrained
+```
+
+This happened in the glasses model when `_slot_profile` used `addCenterToCenterSlot` for generated frame rails.
+
+Fix:
+
+- For rebuild-generated capsule/slot rails, do not use Fusion's auto-constrained slot helper.
+- Manually draw the capsule from two sketch lines and two sketch arcs.
+- Use existing sketch endpoints when creating the arcs/lines so the profile closes.
+- Keep explicit constraints out of this generated helper unless the user needs editable sketch dimensions.
+
+Project pattern:
+
+```python
+top_line = lines.addByTwoPoints(start_left, end_left)
+end_arc = arcs.addByThreePoints(top_line.endSketchPoint, end_outer, end_right)
+bottom_line = lines.addByTwoPoints(end_arc.endSketchPoint, start_right)
+arcs.addByThreePoints(bottom_line.endSketchPoint, start_outer, top_line.startSketchPoint)
+```
+
+Rule:
+
+Use Fusion's slot helper for interactive/editable sketches. Use manual capsule geometry for deterministic generated rebuilds.
+
+## Visual failure: scattered rails instead of one frame
+
+Cause:
+
+The first glasses generator attempted to build the front frame from many separate capsule bars and combine them afterward. The result was visually wrong: separate rounded bars around the lens instead of one coherent glasses frame. This is a CAD strategy failure rather than a syntax/API failure.
+
+Fix:
+
+- Build the main front shape as one solid blank.
+- Cut the lens opening from that blank.
+- Cut the nose clearance from that blank.
+- Add arms afterward and join/combine them into the frame.
+- Keep the lens insert as a separate body.
+
+Rule:
+
+For continuous eyewear/frame geometry, prefer "blank body plus cut openings" over "many bars plus combine." Use bars only for secondary details that truly are separate rails.
+
 ## Fillet fails
 
 Common causes:
@@ -99,13 +149,25 @@ Common causes:
 - Existing appearance is reused with stale values.
 - Face appearance overrides body appearance.
 - Source appearance is not available in the library.
+- `app.materialLibraries.itemByName('Fusion 360 Appearance Library')` can return `None` in some Fusion installs/sessions, causing `AttributeError: 'NoneType' object has no attribute 'appearances'`.
 
 Fix:
 
-- Use known base appearances.
+- Do not assume one exact material library name exists.
+- Search preferred material library names first, then scan available material libraries for any source appearance.
+- If no source appearance is available, skip styling and log a warning instead of failing the rebuild.
+- Use known base appearances when available.
 - Log available appearance properties.
 - Apply to body and clear face overrides if necessary.
 - Use unique appearance names for distinct colors.
+
+Debugging note from the glasses model:
+
+```text
+AttributeError: 'NoneType' object has no attribute 'appearances'
+```
+
+This happened when `_appearance` assumed `app.materialLibraries.itemByName('Fusion 360 Appearance Library')` returned a library. The fix was to add a `_source_appearance(app)` helper that searches multiple library names and falls back to the first available appearance.
 
 ## Command button does not appear
 
@@ -171,4 +233,3 @@ When Finn reports an error:
 2. Patch the smallest failing layer.
 3. Explain the root cause in plain language.
 4. Tell Finn whether to click rebuild or restart/toggle the add-in.
-

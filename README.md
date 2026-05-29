@@ -19,6 +19,7 @@ Agent-facing documentation lives in:
 - `docs/PALETTE_LIVE_WORKFLOW.md`
 - `docs/DESIGN_INTENT_RULES.md`
 - `docs/SOURCE_RELIABILITY.md`
+- `docs/AIRPODS_MAX_VISOR_CAD_SPEC.md`
 
 ## First run
 

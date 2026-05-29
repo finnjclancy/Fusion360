@@ -170,6 +170,20 @@ Types:
 
 Prefer patterning features rather than sketch geometry when the repeated operation is a modeled feature. For simple holes in this rebuild workflow, generating repeated circle profiles directly can be simpler and more deterministic.
 
+## Generated Slots and Capsules
+
+For user-editable sketches, Fusion's slot helpers are useful.
+
+For deterministic generated rebuilds, prefer manual capsule geometry:
+
+1. Calculate the slot centerline from start and end points.
+2. Calculate a perpendicular vector.
+3. Draw two side lines.
+4. Draw two semicircular end arcs.
+5. Use the closed profile for extrude/cut.
+
+This avoids automatic sketch constraints that can cause `VCS_SKETCH_OVER_CONSTRAINTS`.
+
 ## Mirror
 
 Use mirror for symmetric parts:
@@ -234,4 +248,3 @@ Keep text simple. Font availability can vary.
 - Autodesk, ExtrudeFeatures.createInput: https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ExtrudeFeatures_createInput.htm
 - Autodesk, Loft feature sample: https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/LoftFeatureSample_Sample.htm
 - Autodesk, Getting Started with Fusion API: https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-D93DF10F-4209-4073-A2A0-4FA8788C8709
-

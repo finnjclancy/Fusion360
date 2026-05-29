@@ -77,6 +77,22 @@ Add explicit dimensions when:
 
 Do not add sketch dimensions just to duplicate JSON values if the sketch is deleted and recreated every rebuild.
 
+## Auto-Constrained Helper Caution
+
+Fusion sketch helpers that automatically create constraints or dimensions can fail in generated geometry even when the shape is simple. One real project example:
+
+```text
+VCS_SKETCH_OVER_CONSTRAINTS - Sketch geometry is over constrained
+```
+
+This occurred when `Sketch.addCenterToCenterSlot(...)` was used to create generated frame rails for the glasses model. The fix was to draw the capsule manually from lines and arcs with no extra dimensions.
+
+Agent rule:
+
+- Use auto-constrained helpers when creating user-editable sketches.
+- Use manual curve construction for rebuild-generated geometry when constraints are not needed.
+- If a generated helper throws an overconstraint error, replace it with simpler unconstrained geometry.
+
 ## Overconstraint Avoidance
 
 If Fusion reports that a sketch is overconstrained:
@@ -113,4 +129,3 @@ Unless the user says otherwise:
 - Autodesk, SketchDimensions object: https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/SketchDimensions.htm
 - Autodesk, Sketches in Fusion: https://help.autodesk.com/view/fusion360/ENU/?contextId=SKT-3D-SKETCH
 - Autodesk, Sketch constraints tutorial: https://www.autodesk.com/products/fusion-360/blog/mastering-sketch-constraints-autodesk-fusion-tutorial/
-
